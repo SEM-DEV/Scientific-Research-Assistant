@@ -1,0 +1,17 @@
+  {
+    "name": "Scientific Research websites",
+	 "manifest_version": 2,
+    "version": "1.0",
+    "description": "List of websites post for scientific research",
+    "icons": {
+      "16": "icon_16.png"
+    },
+    
+    "browser_action": {
+      "default_icon": {                   
+            "16": "icon_16.png"        
+                   
+          },
+      "default_popup": "popup.html"
+    }
+  }
