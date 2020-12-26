@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  
+  color: #aab0b8;
+  background-color: #0d1117;
+  width: 100%;
+  font-size: 15px;
+  padding: 12px;
+  border: 1px solid #161b22;
+  margin-bottom: 12px;
+  border-radius: 7px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  
+}
+
+#myUL li a {
+  border: 1px solid #0d1117;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #0d1117;
+  padding: 12px;
+  text-decoration: none;
+  border: 1px solid #161b22;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 17px;
+  color: #aab0b8;
+  display: block;
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #161b22;
+}
+.vertical-menu {
+   background-color: #161b22;
+   width: 270px;
+height: 250px;
+  overflow-y: scroll;
+  border: 1px solid #0d1117;
+  border-radius: 5px;
+
+}
+
+
+.git{
+color:#549ef5;
+}
+.git:link {
+  text-decoration: none;
+}
+
+.git:visited {
+  text-decoration: none;
+}
+
+.git:hover {
+  text-decoration: underline;
+}
+
+.git:active {
+  text-decoration: underline;
+}
+.vertical-menu::-webkit-scrollbar {
+  width: 10px;
+}
+ 
+.vertical-menu::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 20px;
+}
+
+.vertical-menu::-webkit-scrollbar-track {
+  background: #ddd;
+  border-radius: 20px;
+}
+
+</style>
+</head>
+<body style="background-color: #161b22;">
+
+<h2 style="color: #aab0b8;text-align: center">Scientific Research websites</h2>
+
+<input type="text" id="myInput"  placeholder="Search for websites.." title="Type in a name">
+<div class="vertical-menu">
+<ul id="myUL">
+
+  <li><a href="https://www.academia.edu/" target="_blank">Academia</a></li>
+  <li><a href="https://www.accessengineeringlibrary.com/" target="_blank">Access Engineering Library</a></li>
+  <li><a href="https://pubs.acs.org/" target="_blank">ACS Publication</a></li>
+  <li><a href="https://arc.aiaa.org" target="_blank">AIAA Aerospace Research Central</a></li>
+  <li><a href="https://ascelibrary.org/" target="_blank">ASCE Library</a></li>
+  <li><a href="https://asmedigitalcollection.asme.org/" target="_blank">ASCM Library</a></li>
+  <li><a href="https://brill.com/" target="_blank">Brill</a></li>
+  <li><a href="https://www.cambridge.org/core" target="_blank">Cambridge Core</a></li>
+  <li><a href="https://cdnsciencepub.com/" target="_blank">Canadian Science publishing</a></li>
+  <li><a href="http://search.ebscohost.com/login.aspx?direct=true&db=nlebk&bquery=&cli0=FT&clv0=Y&type=1&site=ehost-live" target="_blank">Ebscohost</a></li>
+  <li><a href="https://www.degruyter.com/" target="_blank">Degruyter</a></li>
+  <li><a href="https://www.emerald.com/" target="_blank">Emerald</a></li>
+  <li><a href="https://scholar.google.com/" target="_blank">Google Scholar</a></li>
+  <li><a href="https://www.ice.org.uk/knowledge-and-resources/ice-library" target="_blank">ICE Library</a></li>
+  <li><a href="https://www.jstor.org" target="_blank">Jstor</a></li>
+  <li><a href="https://www.mdpi.com/" target="_blank">MDPI</a></li>
+  <li><a href="https://nano.nature.com/" target="_blank">Nano Nature</a></li>
+  <li><a href="https://search.proquest.com/" target="_blank">Proquest</a></li>
+  <li><a href="https://www.researchgate.net/" target="_blank">Research Gate</a></li>
+  <li><a href="https://routledgehandbooks.com/" target="_blank">Routledge Handbooks</a></li>
+  <li><a href="https://saemobilus.sae.org/login/" target="_blank">Sae Mobilus</a></li>
+  <li><a href="https://journals.sagepub.com/" target="_blank">Sage Pub</a></li>
+  <li><a href="https://www.semanticscholar.org/" target="_blank">Scholar Semantic</a></li>
+  <li><a href="https://www.sciencedirect.com/" target="_blank">Science Direct</a></li>
+  <li><a href="https://sci-hub.se/" target="_blank">Science Hub</a></li>
+  <li><a href="https://www.spiedigitallibrary.org" target="_blank">Spie Digital Library</a></li>
+  <li><a href="https://link.springer.com/" target="_blank">Springer Link</a></li>
+  <li><a href="https://materials.springer.com/" target="_blank">Springer material</a></li>
+  <li><a href="https://www.statista.com/" target="_blank">Statista</a></li>
+  <li><a href="https://www.tandfonline.com/" target="_blank">Taylor and Francis</a></li>
+  <li><a href="http://www.techno-press.org/" target="_blank">Techno Press</a></li>
+  <li><a href="https://online.ucpress.edu/" target="_blank">University of California Press</a></li>
+  <li><a href="http://login.webofknowledge.com/" target="_blank">Web of Knowledge</a></li>
+  <li><a href="https://onlinelibrary.wiley.com/" target="_blank">Wiley</a></li>
+  <li><a href="https://www.worldscientific.com"  target="_blank">World Scientific</a></li>
+ 
+</ul>
+</div>
+<hr>
+<a class="git" href="https://github.com/SEM-DEV/Scientific-Research-websites" target="_blank" >GitHub repository</a>
+<script src="popup.js"></script>
+
+</body>
+</html>
