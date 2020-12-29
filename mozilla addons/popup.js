@@ -21,6 +21,12 @@ function handler() {
         }
     }
 }
+window.onload = function() {
+  var input = document.getElementById("myInput").focus();
+}
+window.onload = function() {
+  var input = document.getElementById("myInput").focus();
+}
 // Get the saved stats and render the data in the popup window.
 const MAX_ITEMS = 5;
 
