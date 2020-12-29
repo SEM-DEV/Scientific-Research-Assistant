@@ -22,4 +22,6 @@ function handler() {
         }
     }
 }
-
+window.onload = function() {
+  var input = document.getElementById("myInput").focus();
+}
