@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "homepage_url": "https://github.com/SEM-DEV/Scientific-Research-websites",
   "name": "Scientific Research websites",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "browser_action": {
     "default_icon": {
       "32": "icons/icon-32.png"
