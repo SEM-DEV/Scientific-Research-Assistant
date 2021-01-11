@@ -19,13 +19,104 @@
   margin-bottom: 12px;
   border-radius: 7px;
 }
+#myInput1 {
+  
+  color: #aab0b8;
+  background-color: #0d1117;
+  width: 100%;
+  font-size: 15px;
+  padding: 12px;
+  border: 1px solid #161b22;
+  margin-bottom: 12px;
+  border-radius: 7px;
+}
+.bt1 {
+  
+  color: #aab0b8;
+  background-color: #0d3457;
+  width: 120px;
+  font-size: 12px;
+  padding: 12px;
+  border: 1px solid #161b22;
+  margin: 6px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.bt3 {
+  color: #aab0b8;
+  background-color: #0d1117;
+  width: 100%;
+  font-size: 12px;
+  padding: 12px;
+  border: 1px solid #161b22;
+  margin-bottom: 6px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.bt2 {
+  
+  color: #aab0b8;
+  background-color: #0d1117;
+  width: 120px;
+  font-size: 12px;
+  padding: 12px;
+  border: 1px solid #161b22;
+  margin: 6px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.bt1:hover {
+  background-color: #0d3457;
+  
+}
+.bt2:hover {
+  background-color: #0d3457;
+  
+}
+.bt3:hover {
+  background-color: #0d3457;
+  
+}
+.bata {
+  
+  color: #aab0b8;
+  background-color: #0d1117;
+  width: 120px;
+  font-size: 12px;
+  padding: 9px;
+  border: 2px solid #161b22;
+  margin: 4px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.bata:hover {
+  background-color: #0d3457;
+  
+}
+.inp {
+  
+  color: #aab0b8;
+  background-color: #0d1117;
+  width: 100%;
+  font-size: 12px;
+  padding: 9px;
+  border: 1px solid #161b22;
+  margin-bottom: 9px;
+  border-radius: 7px;
+  
+}
 
 #myUL {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
-
+#showthelongtext {
+list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align:left;
+}
 #myUL li a {
   border: 1px solid #0d1117;
   margin-top: -1px; /* Prevent double borders */
@@ -40,6 +131,7 @@
   display: block;
 }
 
+
 #myUL li a:hover:not(.header) {
   background-color: #161b22;
 }
@@ -52,6 +144,16 @@ height: 250px;
   border-radius: 5px;
 
 }
+.vertical-menu1 {
+   background-color: #161b22;
+   width: 270px;
+height: 180px;
+  overflow-y: scroll;
+  border: 1px solid #0d1117;
+  border-radius: 5px;
+
+
+}
 
 .vertical-menu a {
   background-color: #161b22;
@@ -59,7 +161,7 @@ height: 250px;
   display: block;
   padding: 9px;
   text-decoration: none;
-  text-align: center;
+  text-align: left;
 }
 
 .vertical-menu a:hover {
@@ -67,6 +169,15 @@ height: 250px;
 }
 
 .vertical-menu a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.linka:hover {
+  background-color: #161b22;
+}
+
+.linka.active {
   background-color: #4CAF50;
   color: white;
 }
@@ -88,6 +199,36 @@ color:#549ef5;
 .git:active {
   text-decoration: underline;
 }
+.linka{
+ border: 1px solid #0d1117;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #0d1117;
+  padding: 12px;
+  text-decoration: none;
+  border: 1px solid #161b22;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 17px;
+  color: #aab0b8;
+  display: block;
+
+}
+.walid{
+   
+   width: 270px;
+height: auto;
+  overflow: hidden;
+ 
+}
+#stored1{
+display: none;
+}
+#exist1{
+display: block;
+}
+#addinput{
+display: none;
+}
 .vertical-menu::-webkit-scrollbar {
   width: 10px;
 }
@@ -101,18 +242,51 @@ color:#549ef5;
   background: #ddd;
   border-radius: 20px;
 }
+.vertical-menu1::-webkit-scrollbar {
+  width: 10px;
+}
+ 
+.vertical-menu1::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 20px;
+}
+
+.vertical-menu1::-webkit-scrollbar-track {
+  background: #ddd;
+  border-radius: 20px;
+}
 </style>
 </head>
-<body style="background-color: #161b22;">
+<body style="background-color: #161b22;" class="walid">
 
-<h2 style="color: #aab0b8;text-align: center">Scientific Research websites</h2>
+<h3 style="color: #aab0b8;text-align: center">Scientific Research websites</h3>
+<button id="openexist" class="bt1" >Existing links</button>
+<button id="openstored" class="bt2" >My stored links</button>
+<div id="stored1">
+<input  type="text" id="myInput1"  placeholder="Search for links.." title="Type to search for stored links">
+<button id="openadd" class="bt3" >Click to add  more links</button>
+<div id="addinput">
+<input class="inp" type="text" id="link"  placeholder="Paste a valid link.." title="Make sure you type or paste a valid link to be able to open it">
+<input  class="inp" type="text" id="title"  placeholder="Type the title of the link.." title="Type the title you want to show it in the list">
 
+
+<button id="addb" class="bata" >Click to add link</button>
+<button id="cleartext" class="bata" >Clear the list</button>
+</div>
+<div class="vertical-menu1">
+
+<ul id="showthelongtext" >
+
+</ul>
+</div>
+</div>
+<div id="exist1">
 <input type="text" id="myInput"  placeholder="Search for websites.." title="Type in a name">
 <div class="vertical-menu">
+
 <ul id="myUL">
-
-
-  <li><a href="https://www.academia.edu/" target="_blank">Academia</a></li>
+   
+ <li><a href="https://www.academia.edu/" target="_blank">Academia</a></li>
   <li><a href="http://www.academicinfo.net/" target="_blank">Academic Info</a></li>
   <li><a href="https://www.accessengineeringlibrary.com/" target="_blank">Access Engineering Library</a></li>
   <li><a href="https://pubs.acs.org/" target="_blank">ACS Publication</a></li>
@@ -159,8 +333,11 @@ color:#549ef5;
   <li><a href="https://www.worldscientific.com"  target="_blank">World Scientific</a></li>
   <li><a href="https://worldwidescience.org/" target="_blank">Worldwide Science</a></li>
   <li><a href="https://b-ok.org/" target="_blank">Z Library</a></li> 
+  
+  
  
 </ul>
+</div>
 </div>
 <hr>
 <a class="git" href="https://github.com/SEM-DEV/Scientific-Research-websites" target="_blank" >GitHub repository</a>
