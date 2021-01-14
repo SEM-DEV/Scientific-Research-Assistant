@@ -1,19 +1,28 @@
-  {
+{
+    "manifest_version": 2,
     "name": "Scientific Research websites",
-	 "manifest_version": 2,
-    "version": "6.0",
+    "version": "7.0",
     "description": "List of websites post for scientific research",
-    "icons": {
-      "16": "icon_16.png"
-    },
-    "permissions": [
-    "storage"
-  ],
+   
     "browser_action": {
-      "default_icon": {                   
-            "16": "icon_16.png"        
-                   
-          },
-      "default_popup": "popup.html"
+        "default_icon": "icon_16.png" ,
+        "default_popup": "popup.html"
+    },
+    
+
+    "icons": {
+        "16": "icon_16.png" 
+    },
+    "commands": {
+        "_execute_browser_action": {
+            "suggested_key": {
+                "default": "Alt+A",
+                "windows": "Alt+A",
+                "mac": "Alt+A",
+                "chromeos": "Alt+A",
+                "linux": "Alt+A"
+            }
+        }
     }
-  }
+   
+}
