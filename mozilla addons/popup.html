@@ -138,7 +138,7 @@ list-style-type: none;
 .vertical-menu {
    background-color: #161b22;
    width: 270px;
-height: 250px;
+height: 270px;
   overflow-y: scroll;
   border: 1px solid #0d1117;
   border-radius: 5px;
@@ -147,7 +147,7 @@ height: 250px;
 .vertical-menu1 {
    background-color: #161b22;
    width: 270px;
-height: 180px;
+height: 160px;
   overflow-y: scroll;
   border: 1px solid #0d1117;
   border-radius: 5px;
@@ -229,13 +229,34 @@ display: block;
 #addinput{
 display: none;
 }
+#quicksci{
+display: none;
+}
+#quickscihub{
+display: none;
+}
 </style>
 </head>
 <body style="background-color: #161b22;" class="walid">
 
 <h3 style="color: #aab0b8;text-align: center">Scientific Research websites</h3>
+<div>
 <button id="openexist" class="bt1" >Existing links</button>
 <button id="openstored" class="bt2" >My stored links</button>
+</div>
+<div>
+<button id="openquick" class="bt2" >Quick Search</button>
+<button id="opensci" class="bt2" >Quick SCI-HUB</button>
+</div>
+<div id="quicksci">
+<input class="inp" type="text" id="searchmic"  placeholder="Type search item.." title="Put the text you want to search for">
+<button id="quickmic" class="bt2" >Open Microsoft Academic</button>
+<button id="quickgoo" class="bt2" >Open Google Scholar</button>
+</div>
+<div id="quickscihub">
+<input class="inp" type="text" id="searchsci"  placeholder="paste the link of the paper.." title="put the text you want to search for">
+<button id="quickscih1" class="bt3" >Open link in SCI-HUB</button>
+</div>
 <div id="stored1">
 <input  type="text" id="myInput1"  placeholder="Search for links.." title="Type to search for stored links">
 <button id="openadd" class="bt3" >Click to add  more links</button>
