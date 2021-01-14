@@ -117,6 +117,10 @@ document.addEventListener('DOMContentLoaded', function() {
 function handler4() {
 document.getElementById("exist1").style.display="block";
 document.getElementById("stored1").style.display="none";
+document.getElementById("quicksci").style.display="none";
+document.getElementById("quickscihub").style.display="none";
+document.getElementById("opensci").style.backgroundColor="#0d1117";
+document.getElementById("openquick").style.backgroundColor="#0d1117";
 document.getElementById("openexist").style.backgroundColor="#0d3457";
 document.getElementById("openstored").style.backgroundColor="#0d1117";
  var input = document.getElementById("myInput").focus();
@@ -130,6 +134,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function handler5() {
 document.getElementById("exist1").style.display="none";
+document.getElementById("quicksci").style.display="none";
+document.getElementById("quickscihub").style.display="none";
+document.getElementById("opensci").style.backgroundColor="#0d1117";
+document.getElementById("openquick").style.backgroundColor="#0d1117";
 document.getElementById("openadd").style.backgroundColor="#0d1117";
  document.getElementById("openadd").innerHTML="Click to add  more links";
 document.getElementById("stored1").style.display="block";
@@ -161,6 +169,98 @@ document.getElementById("openadd").style.backgroundColor="#0d1117";
  document.getElementById("openadd").innerHTML="Click to add  more links";
 	}
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById("quickmic").addEventListener("click", handler11);
+});
+
+
+function handler11() {
+	var ser=document.getElementById("searchmic").value;
+	if ( ser == "" ) {
+		alert('Type something!');
+		
+	}
+	else {
+var search1="https://academic.microsoft.com/search?q=" + document.getElementById("searchmic").value;
+window.open(search1, '_blank');
+	}
+}
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById("quickgoo").addEventListener("click", handler12);
+});
+
+
+function handler12() {
+		var ser=document.getElementById("searchmic").value;
+	if ( ser == "" ) {
+		alert('Type something!');
+		
+	}
+	else {
+	
+var search1="https://scholar.google.com/scholar?q=" + document.getElementById("searchmic").value;
+window.open(search1, '_blank');
+ }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById("quickscih1").addEventListener("click", handler13);
+});
+
+
+function handler13() {
+		var ser=document.getElementById("searchsci").value;
+	if ( ser == "" ) {
+		alert('Type something!');
+		
+	}
+	else {
+	
+var search1="https://sci-hub.se/" + document.getElementById("searchsci").value;
+window.open(search1, '_blank');
+	}
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById("openquick").addEventListener("click", handler14);
+});
+
+
+function handler14() {
+document.getElementById("exist1").style.display="none";
+document.getElementById("openadd").style.backgroundColor="#0d1117";
+ document.getElementById("openadd").innerHTML="Click to add  more links";
+document.getElementById("stored1").style.display="none";
+document.getElementById("addinput").style.display="none";
+document.getElementById("quicksci").style.display="block";
+document.getElementById("quickscihub").style.display="none";
+document.getElementById("opensci").style.backgroundColor="#0d1117";
+document.getElementById("openexist").style.backgroundColor="#0d1117";
+document.getElementById("openstored").style.backgroundColor="#0d1117";
+document.getElementById("openquick").style.backgroundColor="#0d3457";
+ var input = document.getElementById("searchmic").focus();
+}
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById("opensci").addEventListener("click", handler15);
+});
+
+
+function handler15() {
+document.getElementById("exist1").style.display="none";
+document.getElementById("openadd").style.backgroundColor="#0d1117";
+ document.getElementById("openadd").innerHTML="Click to add  more links";
+document.getElementById("stored1").style.display="none";
+document.getElementById("addinput").style.display="none";
+document.getElementById("quicksci").style.display="none";
+document.getElementById("quickscihub").style.display="block";
+document.getElementById("opensci").style.backgroundColor="#0d3457";
+document.getElementById("openexist").style.backgroundColor="#0d1117";
+document.getElementById("openstored").style.backgroundColor="#0d1117";
+document.getElementById("openquick").style.backgroundColor="#0d1117";
+ var input = document.getElementById("searchsci").focus();
+}
+
 
 
 
