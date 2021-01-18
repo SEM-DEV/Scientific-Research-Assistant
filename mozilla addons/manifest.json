@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "homepage_url": "https://github.com/SEM-DEV/Scientific-Research-websites",
   "name": "Scientific Research Assistant",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "browser_action": {
     "default_icon": {
       "32": "icons/icon-32.png"
@@ -11,7 +11,8 @@
     "default_popup": "popup.html"
   },
   "permissions": [
-    "storage"
+    "storage",
+	"contextMenus"
   ],
   "background": {
     "scripts": [ "background.js"]
