@@ -72,7 +72,7 @@ function handler1() {
 		if ( isValidURL(linkaa) == true) {
 			var link1=document.getElementById("link").value;
             var title1=document.getElementById("title").value;
-            document.getElementById("showthelongtext").innerHTML=document.getElementById("showthelongtext").innerHTML + "<li class='linka1'><a class='linka' href='" + link1 +"'>" + title1 +"</a></li>";
+            document.getElementById("showthelongtext").innerHTML=document.getElementById("showthelongtext").innerHTML + "<li class='linka1'><a class='linka' target='_blank' href='" + link1 +"'>" + title1 +"</a></li>";
             var dech=document.getElementById("showthelongtext").innerHTML;
             document.getElementById("link").value="";
             document.getElementById("title").value="";
