@@ -1,4 +1,19 @@
 browser.menus.create({
+    title: "Add the title of the copied title",
+    contexts:["selection"],
+    id: "acasearch234",
+});
+browser.menus.onClicked.addListener(async function (info, tab) {
+  if (info.menuItemId == "acasearch234") {
+    if (info.selectionText) {
+		var dech=info.selectionText;
+		localStorage.setItem("dfh41232", dech);
+    }
+  }
+});
+
+
+browser.menus.create({
     title: "Academic Search Engine",
     contexts:["selection"],
     id: "acasearch",
