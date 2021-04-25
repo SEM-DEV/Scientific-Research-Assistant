@@ -654,13 +654,13 @@ browser.menus.onClicked.addListener(async function (info, tab) {
   }
 });
 
-browser.contextMenus.create({
-    id: "sci12",
-    title: "Download from Science Hub",
-    contexts: ["link"]
+browser.menus.create({
+  id: "muted-tab",
+  title: "Download from SCI-HUB",
+  contexts: ["link"]
 });
 browser.menus.onClicked.addListener(async function (info, tab) {
-  if (info.menuItemId == "sci12") {
+  if (info.menuItemId == "muted-tab") {
     if (info.linkUrl) {
 		const url = "https://sci-hub.se/" + info.linkUrl;
       let newTab = await browser.tabs.create({ 'active': true, 'url': url, 'index': tab.index+1 });
@@ -668,3 +668,4 @@ browser.menus.onClicked.addListener(async function (info, tab) {
     }
   }
 });
+
