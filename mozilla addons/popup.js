@@ -53,7 +53,7 @@ window.addEventListener('load', (event) => {
     if(localStorage.getItem("dfh4")!="") { 
  var dech = localStorage.getItem("dfh4"); 
  document.getElementById("showthelongtext").innerHTML=dech;
- var list, i, switching, b, shouldSwitch;
+
   
    }
   
@@ -100,40 +100,18 @@ document.getElementById("stored1").style.display="block";
 document.getElementById("openstored").style.backgroundColor="#0d3457";
 document.getElementById("openexist").style.backgroundColor="#0d1117";
  var input = document.getElementById("myInput1").focus();
- 
-	var list, i, switching, b, shouldSwitch, lista;
-  list = document.getElementById("showthelongtext");
-  switching = true;
-  /* Make a loop that will continue until
-  no switching has been done: */
-  while (switching) {
-    // start by saying: no switching is done:
-    switching = false;
-    b = list.getElementsByTagName("LI");
-    // Loop through all list-items:
-    for (i = 0; i < (b.length - 1); i++) {
-      // start by saying there should be no switching:
-      shouldSwitch = false;
-      /* check if the next item should
-      switch place with the current item: */
-      if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
-        /* if next item is alphabetically
-        lower than current item, mark as a switch
-        and break the loop: */
-        shouldSwitch = true;
-        break;
-      }
-    }
-    if (shouldSwitch) {
-      /* If a switch has been marked, make the switch
-      and mark the switch as done: */
-      b[i].parentNode.insertBefore(b[i + 1], b[i]);
-      switching = true;
-    }
-	  }
-	  
-	  var dech=document.getElementById("showthelongtext").innerHTML;
-localStorage.setItem("dfh4", dech); 
+ var mylist = $('#showthelongtext');
+var listitems = mylist.children('li').get();
+
+listitems.sort(function(a, b) 
+{
+   return $(a).text().toUpperCase().localeCompare($(b).text().toUpperCase());
+})
+
+mylist.empty().append(listitems);
+
+//$.each(listitems, function(idx, itm) { mylist.append(itm); });
+
 }
 
 
@@ -239,4 +217,5 @@ document.getElementById("showthelongtext").innerHTML="";
 var dech=document.getElementById("showthelongtext").innerHTML;
 localStorage.setItem("dfh4", dech);
 }
+
 
