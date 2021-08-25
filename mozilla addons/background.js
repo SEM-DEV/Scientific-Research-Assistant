@@ -1,5 +1,5 @@
 browser.menus.create({
-    title: "Add the title of the copied title",
+    title: "Add the title and the current link",
     contexts:["selection"],
     id: "acasearch234",
 });
@@ -7,7 +7,34 @@ browser.menus.onClicked.addListener(async function (info, tab) {
   if (info.menuItemId == "acasearch234") {
     if (info.selectionText) {
 		var dech=info.selectionText;
+		
 		localStorage.setItem("dfh41232", dech);
+		
+		browser.tabs.query({currentWindow: true, active:true}).then(queryInfo => {
+    browser.tabs.get(queryInfo[0].id).then(tab => {
+      var tabUrl = tab.url;
+     localStorage.setItem("dfh4123454", tabUrl);  
+	 var dech23 = localStorage.getItem("dfh4"); 
+	  if(localStorage.getItem("dfh4")=="") { 
+	  
+    dech23="<li class='linka1'><a class='linka' href='" + tabUrl +"'>" + dech +"</a></li>";
+    localStorage.setItem("dfh4", dech23);
+    
+	} else {
+   dech23=dech23 + "<li class='linka1'><a class='linka' href='" + tabUrl +"'>" + dech +"</a></li>";
+    localStorage.setItem("dfh4", dech23);
+    
+ 
+	 
+   }
+	 
+	 
+	 
+	});
+  });
+		
+		
+		
     }
   }
 });
@@ -668,4 +695,3 @@ browser.menus.onClicked.addListener(async function (info, tab) {
     }
   }
 });
-
