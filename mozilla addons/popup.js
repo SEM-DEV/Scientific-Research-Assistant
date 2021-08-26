@@ -100,6 +100,19 @@ document.getElementById("stored1").style.display="block";
 document.getElementById("openstored").style.backgroundColor="#0d3457";
 document.getElementById("openexist").style.backgroundColor="#0d1117";
  var input = document.getElementById("myInput1").focus();
+ 
+ var dech233 = document.getElementById("showthelongtext").getElementsByTagName("li").length;
+	  if(dech233=="0") { 
+	 document.getElementById("countlist").innerHTML="You don't have any stored links"; 
+    
+    
+    
+	} else {
+   document.getElementById("countlist").innerHTML='You have ' + dech233 + ' stored links';
+    
+    	 
+   }
+ 
  var mylist = $('#showthelongtext');
 var listitems = mylist.children('li').get();
 
@@ -216,6 +229,17 @@ function handler3() {
 document.getElementById("showthelongtext").innerHTML="";
 var dech=document.getElementById("showthelongtext").innerHTML;
 localStorage.setItem("dfh4", dech);
+ var dech233 = document.getElementById("showthelongtext").getElementsByTagName("li").length;
+	  if(dech233=="0") { 
+	 document.getElementById("countlist").innerHTML="You don't have any stored links"; 
+    
+    
+    
+	} else {
+   document.getElementById("countlist").innerHTML='You have ' + dech233 + ' stored links';
+    
+    	 
+   }
 }
 
 
