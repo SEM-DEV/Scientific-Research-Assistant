@@ -696,4 +696,3 @@ browser.menus.onClicked.addListener(async function (info, tab) {
   }
 });
 
-
