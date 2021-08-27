@@ -1,14 +1,21 @@
 {
     "manifest_version": 2,
     "name": "Scientific Research Assistant",
-    "version": "9.0",
+    "version": "10.0",
     "description": "List of websites post for scientific research",
    
     "browser_action": {
         "default_icon": "icon_16.png" ,
         "default_popup": "popup.html"
     },
-    
+     "background": {
+    "scripts": [ "background.js"]
+  },
+  "permissions": [
+    "tabs",
+    "storage",
+	"contextMenus"
+  ],
 
     "icons": {
         "16": "icon_16.png" 
