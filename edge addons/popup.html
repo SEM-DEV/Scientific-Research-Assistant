@@ -78,15 +78,15 @@
   
 }
 .bata {
-  
   color: #aab0b8;
   background-color: #0d1117;
-  width: 120px;
-  font-size: 12px;
-  padding: 9px;
-  border: 2px solid #161b22;
-  margin: 4px;
-  border-radius: 6px;
+  width: 100%;
+  font-size: 14px;
+  padding: 5px;
+  border: 1px solid #161b22;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  border-radius: 7px;
   cursor: pointer;
 }
 .bata:hover {
@@ -266,7 +266,7 @@ display: none;
 <body style="background-color: #161b22;" class="walid">
 
 <h3 style="color: #aab0b8;text-align: center">Scientific Research Assistant</h3>
- <h5 style="color: #aab0b8;text-align: center">Press Alt+A to open the window quickly</h5>
+<h5 style="color: #aab0b8;text-align: center">Press Alt+A to open the window quickly</h5>
 <div>
 <button id="openexist" class="bt1" >Existing links</button>
 <button id="openstored" class="bt2" >My stored links</button>
@@ -285,22 +285,16 @@ display: none;
 <button id="quickscih1" class="bt3" >Open link in SCI-HUB</button>
 </div>
 <div id="stored1">
+<div id="countlist" style="color: #aab0b8;text-align: center;margin: 5px;">You have 0 stored links</div>
 <input  type="text" id="myInput1"  placeholder="Search for links.." title="Type to search for stored links">
-<button id="openadd" class="bt3" >Click to add  more links</button>
-<div id="addinput">
-<input class="inp" type="text" id="link"  placeholder="Paste a valid link.." title="Make sure you type or paste a valid link to be able to open it">
-<input  class="inp" type="text" id="title"  placeholder="Type the title of the link.." title="Type the title you want to show it in the list">
 
-
-<button id="addb" class="bata" >Click to add link</button>
-<button id="cleartext" class="bata" >Clear the list</button>
-</div>
 <div class="vertical-menu1">
 
 <ul id="showthelongtext" >
 
 </ul>
 </div>
+<button id="cleartext" class="bata" >Clear the list</button>
 </div>
 <div id="exist1">
 <input type="text" id="myInput"  placeholder="Search for websites.." title="Type in a name">
@@ -361,8 +355,8 @@ display: none;
 </div>
 </div>
 <hr>
-<a class="git" href="https://github.com/SEM-DEV/Scientific-Research-websites" target="_blank" >GitHub repository</a>
+<a class="git" href="https://github.com/SEM-DEV/Scientific-Research-websites" target="_blank" >Version: 11.0</a>
 <script src="popup.js"></script>
-
+<script src="script.js"></script>
 </body>
 </html>
