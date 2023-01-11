@@ -14,4 +14,8 @@ The extension includes:
 [Get it from Edge](https://microsoftedge.microsoft.com/addons/detail/scientific-research-websi/popdaphggpbcfbfpgkekpgcnjcohpikb)
 
 ## Demo
+![Gif](https://raw.githubusercontent.com/SEM-DEV/Scientific-Research-Assistant/main/Assets/1.gif)
+![Gif](https://raw.githubusercontent.com/SEM-DEV/Scientific-Research-Assistant/main/Assets/2.gif)
+![Gif](https://raw.githubusercontent.com/SEM-DEV/Scientific-Research-Assistant/main/Assets/3.gif)
+![Gif](https://raw.githubusercontent.com/SEM-DEV/Scientific-Research-Assistant/main/Assets/4.gif)
 
