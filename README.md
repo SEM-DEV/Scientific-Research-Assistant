@@ -12,3 +12,6 @@ The extension includes:
 [Get if from Chrome](https://chrome.google.com/webstore/detail/scientific-research-websi/jooegpcnchemlkionfejkjijhjenmdag?hl=ar)
 
 [Get it from Edge](https://microsoftedge.microsoft.com/addons/detail/scientific-research-websi/popdaphggpbcfbfpgkekpgcnjcohpikb)
+
+## Demo
+
