@@ -133,7 +133,7 @@ function handler11() {
 		
 	}
 	else {
-var search1="https://academic.microsoft.com/search?q=" + document.getElementById("searchmic").value;
+var search1="https://www.researchgate.net/search.Search.html?query=" + document.getElementById("searchmic").value;
 window.open(search1, '_blank');
 	}
 }
@@ -168,7 +168,7 @@ function handler13() {
 	}
 	else {
 	
-var search1="https://sci-hub.se/" + document.getElementById("searchsci").value;
+var search1="https://sci-hub.ru/" + document.getElementById("searchsci").value;
 window.open(search1, '_blank');
 	}
 }
