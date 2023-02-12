@@ -513,7 +513,7 @@ chrome.contextMenus.create({
 
 
 function scidown(info,tab) {   
-    const url = "https://sci-hub.se/" + info.linkUrl;
+    const url = "https://sci-hub.ru/" + info.linkUrl;
     chrome.tabs.create({ url: url, 'index': tab.index+1 });
 }
 
