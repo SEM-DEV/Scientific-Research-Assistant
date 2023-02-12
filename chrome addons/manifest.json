@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Scientific Research Assistant",
-    "version": "10.2",
+    "version": "10.3",
     "description": "List of websites post for scientific research",
    
     "browser_action": {
