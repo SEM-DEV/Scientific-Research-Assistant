@@ -70,12 +70,6 @@ browser.menus.create({
     id: "sea4",
 });
 browser.menus.create({
-    title: "Microsoft Academic",
-    contexts:["selection"],
-    parentId: "acasearch",
-    id: "sea5",
-});
-browser.menus.create({
     title: "National Archives Catalog",
     contexts:["selection"],
     parentId: "acasearch",
@@ -349,15 +343,6 @@ browser.menus.onClicked.addListener(async function (info, tab) {
   if (info.menuItemId == "sea4") {
     if (info.selectionText) {
 		const url22 = "https://scholar.google.com/scholar?hl=ar&as_sdt=0%2C5&q=" + info.selectionText;
-      let newTab = await browser.tabs.create({ 'active': true, 'url': url22, 'index': tab.index+1 });
-      browser.tabs.update(newTab.id);
-    }
-  }
-});
-browser.menus.onClicked.addListener(async function (info, tab) {
-  if (info.menuItemId == "sea5") {
-    if (info.selectionText) {
-		const url22 = "https://academic.microsoft.com/search?q=" + info.selectionText;
       let newTab = await browser.tabs.create({ 'active': true, 'url': url22, 'index': tab.index+1 });
       browser.tabs.update(newTab.id);
     }
