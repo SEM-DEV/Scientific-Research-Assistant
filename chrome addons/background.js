@@ -82,17 +82,6 @@ function sea4(info,tab) {
     chrome.tabs.create({ url: url22, 'index': tab.index+1 });
 }
 chrome.contextMenus.create({
-    title: "Microsoft Academic",
-    contexts:["selection"],
-    parentId: "acasearch",
-    id: "sea5",
-	onclick: sea5
-});
-function sea5(info,tab) {   
-    const url22 = "https://academic.microsoft.com/search?q=" + info.selectionText;
-    chrome.tabs.create({ url: url22, 'index': tab.index+1 });
-}
-chrome.contextMenus.create({
     title: "National Archives Catalog",
     contexts:["selection"],
     parentId: "acasearch",
