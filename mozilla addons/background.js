@@ -689,7 +689,7 @@ browser.menus.create({
 browser.menus.onClicked.addListener(async function (info, tab) {
   if (info.menuItemId == "muted-tab") {
     if (info.linkUrl) {
-		const url = "https://sci-hub.se/" + info.linkUrl;
+		const url = "https://sci-hub.ru/" + info.linkUrl;
       let newTab = await browser.tabs.create({ 'active': true, 'url': url, 'index': tab.index+1 });
       browser.tabs.update(newTab.id);
     }
