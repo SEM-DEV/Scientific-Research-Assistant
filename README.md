@@ -7,11 +7,11 @@ The extension includes:
 * A list of the popular websites for scientific research
 * This extension works cross-platform (Mozilla, Chrome, and Edge).
 
-[Get it from mozilla](https://addons.mozilla.org/en-US/firefox/addon/scientific-research-websites/)Mozilla.] 
+[Get it from Mozilla] (https://addons.mozilla.org/en-US/firefox/addon/scientific-research-websites/)Mozilla.] 
 
 [Get it from Chrome.] (https://chrome.google.com/webstore/detail/scientific-research-websi/jooegpcnchemlkionfejkjijhjenmdag?hl=ar)
 
-[Get it from Edge](https://microsoftedge.microsoft.com/addons/detail/scientific-research-websi/popdaphggpbcfbfpgkekpgcnjcohpikb)
+[Get it from Edge] (https://microsoftedge.microsoft.com/addons/detail/scientific-research-websi/popdaphggpbcfbfpgkekpgcnjcohpikb)
 
 ## Demo
 ![Gif](https://raw.githubusercontent.com/SEM-DEV/Scientific-Research-Assistant/main/Assets/1.gif)
