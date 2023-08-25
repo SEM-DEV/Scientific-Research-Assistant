@@ -187,7 +187,7 @@ function pub5(info,tab) {
     chrome.tabs.create({ url: url22, 'index': tab.index+1 });
 }
 chrome.contextMenus.create({
-    title: "ASCM Library",
+    title: "ASME Library",
     contexts:["selection"],
     parentId: "acapub",
     id: "pub6",
