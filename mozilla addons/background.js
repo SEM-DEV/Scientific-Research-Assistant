@@ -131,7 +131,7 @@ browser.menus.create({
     id: "pub5",
 });
 browser.menus.create({
-    title: "ASCM Library",
+    title: "ASME Library",
     contexts:["selection"],
     parentId: "acapub",
     id: "pub6",
