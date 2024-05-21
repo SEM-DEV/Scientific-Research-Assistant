@@ -1,26 +1,27 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "Scientific Research Assistant",
-    "version": "10.3",
+    "version": "10.4",
     "description": "List of websites post for scientific research",
-   
-    "browser_action": {
-        "default_icon": "icon_16.png" ,
+    "action": {
+        "default_icon": "icon_16.png",
         "default_popup": "popup.html"
     },
-     "background": {
-    "scripts": [ "background.js"]
-  },
-  "permissions": [
-    "tabs",
-	"contextMenus"
-  ],
-
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "tabs",
+        "contextMenus",
+        "storage",
+        "activeTab",
+        "scripting"
+    ],
     "icons": {
-        "16": "icon_16.png" 
+        "16": "icon_16.png"
     },
     "commands": {
-        "_execute_browser_action": {
+        "_execute_action": {
             "suggested_key": {
                 "default": "Alt+A",
                 "windows": "Alt+A",
@@ -29,6 +30,25 @@
                 "linux": "Alt+A"
             }
         }
-    }
-   
+    },
+    "content_scripts": [
+        {
+            "matches": [  
+						"https://www.sciencedirect.com/*",
+						"https://arc.aiaa.org/*",
+						"https://asmedigitalcollection.asme.org/*",
+						"https://www.degruyter.com/*",
+						"https://www.emerald.com/*",
+						"https://ieeexplore.ieee.org/*",
+						"https://nature.com/*",
+						"https://link.springer.com/*",
+						"https://www.tandfonline.com/*",
+						"https://onlinelibrary.wiley.com/*",
+						"https://www.worldscientific.com/*"
+						],
+						
+            "js": ["content.js"]
+			
+        }
+    ]
 }
