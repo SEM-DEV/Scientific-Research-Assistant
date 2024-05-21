@@ -36,6 +36,7 @@
             "matches": [  
 						"https://www.sciencedirect.com/*",
 						"https://arc.aiaa.org/*",
+						"https://ascelibrary.org/*",
 						"https://asmedigitalcollection.asme.org/*",
 						"https://www.degruyter.com/*",
 						"https://www.emerald.com/*",
