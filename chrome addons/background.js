@@ -410,7 +410,11 @@ function scidown2(info, tab) {
 
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
     if (message.action === 'openNewTab') {
-        chrome.tabs.create({ url: 'https://sem-dev.questionpro.com/t/AYv8aZ2qpu' });
+        chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+            let currentTab = tabs[0];
+            let newIndex = currentTab.index + 1;
+            chrome.tabs.create({ url: 'https://sem-dev.questionpro.com/t/AYv8aZ2qpu', index: newIndex });
+        });
     }
 });
 chrome.contextMenus.onClicked.addListener((info, tab) => {
