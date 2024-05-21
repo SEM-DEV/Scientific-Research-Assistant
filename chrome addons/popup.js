@@ -1,10 +1,10 @@
 
-// Pure JS:
+
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById("myInput").addEventListener("keyup", handler);
 });
 
-// The handler also must go in a .js file
+
 function handler() {
      var input, filter, ul, li, a, i, txtValue;
     input = document.getElementById("myInput");
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById("myInput1").addEventListener("keyup", handlera);
 });
 
-// The handler also must go in a .js file
+
 function handlera() {
      var input, filter, ul, li, a, i, txtValue;
     input = document.getElementById("myInput1");
@@ -53,10 +53,12 @@ window.onload = function() {
 
 
 window.addEventListener('load', (event) => {
-    if(localStorage.getItem("dfh4")!="") { 
- var dech = localStorage.getItem("dfh4"); 
- document.getElementById("showthelongtext").innerHTML=dech;
-   }
+    chrome.storage.local.get("dfh4", function(result) {
+        var dech = result["dfh4"];
+        if (dech) {
+            document.getElementById("showthelongtext").innerHTML = dech;
+        }
+    });
 });
 
 
@@ -212,23 +214,17 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-function handler323() {
-document.getElementById("showthelongtext").innerHTML="";
-var dech=document.getElementById("showthelongtext").innerHTML;
-localStorage.setItem("dfh4", dech);
- var dech233 = document.getElementById("showthelongtext").getElementsByTagName("li").length;
-	  if(dech233=="0") { 
-	 document.getElementById("countlist").innerHTML="You don't have any stored links"; 
-    
-    
-    
-	} else {
-   document.getElementById("countlist").innerHTML='You have ' + dech233 + ' stored links';
-    
-    	 
-   }
-}
 
+function handler323() {
+    
+    document.getElementById("showthelongtext").innerHTML = "";
+
+ 
+    chrome.storage.local.set({ "dfh4": "" });
+
+   
+    document.getElementById("countlist").innerHTML = "You don't have any stored links";
+}
 
 
 
