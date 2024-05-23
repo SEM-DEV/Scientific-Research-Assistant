@@ -1,11 +1,5 @@
 
 
-
-
-
-
-
-// Create text button and append it to the body
 const textButton = document.createElement('button');
 textButton.innerText = 'If you cannot find this paper or book on sci-hub, you may request it from us.';
 textButton.style.position = 'fixed';
@@ -26,8 +20,7 @@ document.body.appendChild(textButton);
 
 
 
-// Add click event listener to the text button
+
 textButton.addEventListener('click', () => {
-  // Open a new tab with the specified URL
-  chrome.runtime.sendMessage({ action: 'openNewTab', url: 'https://sem-dev.questionpro.com/t/AYv8aZ2qpu' });
-});
+        chrome.runtime.sendMessage({ action: 'openNewTab' });
+    });
