@@ -14,8 +14,7 @@
         "tabs",
         "contextMenus",
         "storage",
-        "activeTab",
-        "scripting"
+        "activeTab"
     ],
     "icons": {
         "16": "icon_16.png"
@@ -34,17 +33,19 @@
     "content_scripts": [
         {
             "matches": [  
-						"https://www.sciencedirect.com/*",
+						"https://www.sciencedirect.com/science/article/*",
 						"https://arc.aiaa.org/*",
-						"https://ascelibrary.org/*",
+						"https://ascelibrary.org/doi/*",
 						"https://asmedigitalcollection.asme.org/*",
 						"https://www.degruyter.com/*",
 						"https://www.emerald.com/*",
 						"https://ieeexplore.ieee.org/*",
 						"https://nature.com/*",
-						"https://link.springer.com/*",
-						"https://www.tandfonline.com/*",
-						"https://onlinelibrary.wiley.com/*",
+						"https://link.springer.com/article/*",
+						"https://link.springer.com/chapter/*",
+						"https://link.springer.com/book/*",
+						"https://www.tandfonline.com/doi/*",
+						"https://onlinelibrary.wiley.com/doi/*",
 						"https://www.worldscientific.com/*"
 						],
 						
