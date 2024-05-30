@@ -72,10 +72,14 @@ document.getElementById("exist1").style.display="block";
 document.getElementById("stored1").style.display="none";
 document.getElementById("quicksci").style.display="none";
 document.getElementById("quickscihub").style.display="none";
-document.getElementById("opensci").style.backgroundColor="#0d1117";
-document.getElementById("openquick").style.backgroundColor="#0d1117";
-document.getElementById("openexist").style.backgroundColor="#0d3457";
-document.getElementById("openstored").style.backgroundColor="#0d1117";
+document.getElementById("opensci").style.backgroundColor="#059862";
+document.getElementById("openquick").style.backgroundColor="#059862";
+document.getElementById("openexist").style.backgroundColor="#e2fffd";
+document.getElementById("openstored").style.backgroundColor="#059862";
+document.getElementById("opensci").style.color="white";
+document.getElementById("openquick").style.color="white";
+document.getElementById("openexist").style.color="#059862";
+document.getElementById("openstored").style.color="white";
  var input = document.getElementById("myInput").focus();
 }
 
@@ -89,11 +93,16 @@ function handler5() {
 document.getElementById("exist1").style.display="none";
 document.getElementById("quicksci").style.display="none";
 document.getElementById("quickscihub").style.display="none";
-document.getElementById("opensci").style.backgroundColor="#0d1117";
-document.getElementById("openquick").style.backgroundColor="#0d1117";
 document.getElementById("stored1").style.display="block";
-document.getElementById("openstored").style.backgroundColor="#0d3457";
-document.getElementById("openexist").style.backgroundColor="#0d1117";
+document.getElementById("opensci").style.backgroundColor="#059862";
+document.getElementById("openquick").style.backgroundColor="#059862";
+document.getElementById("openexist").style.backgroundColor="#059862";
+document.getElementById("openstored").style.backgroundColor="#e2fffd";
+document.getElementById("opensci").style.color="white";
+document.getElementById("openquick").style.color="white";
+document.getElementById("openexist").style.color="white";
+document.getElementById("openstored").style.color="#059862";
+
  var input = document.getElementById("myInput1").focus();
  
   var dech233 = document.getElementById("showthelongtext").getElementsByTagName("li").length;
@@ -131,31 +140,24 @@ document.addEventListener('DOMContentLoaded', function() {
 function handler11() {
 	var ser=document.getElementById("searchmic").value;
 	if ( ser == "" ) {
-		alert('Type something!');
-		
+		alert('Type something!');		
 	}
 	else {
-var search1="https://www.researchgate.net/search.Search.html?query=" + document.getElementById("searchmic").value;
-window.open(search1, '_blank');
+	var content= document.getElementById("listo1").value;		
+		if ( content == "https://arxiv.org/search/?query=" ) {
+		var search1= document.getElementById("listo1").value+ document.getElementById("searchmic").value + "&searchtype=all&abstracts=show&order=-announced_date_first&size=50";
+        window.open(search1, 'tab.index+1');
+	    } else if (content == "https://doaj.org/search/articles?source=%7B%22query%22%3A%7B%22query_string%22%3A%7B%22query%22%3A%22" ) {
+	    var search1= "https://doaj.org/search/articles?ref=quick-search&source=%7B%22query%22%3A%7B%22query_string%22%3A%7B%22query%22%3A%22"+ document.getElementById("searchmic").value + '"%2C"default_operator"%3A"AND"%7D%7D%2C"track_total_hits"%3Atrue%7D';
+        window.open(search1, 'tab.index+1');
+		}
+		else{
+        var search1= document.getElementById("listo1").value+ document.getElementById("searchmic").value;
+        window.open(search1, 'tab.index+1');
+		}
 	}
 }
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById("quickgoo").addEventListener("click", handler12);
-});
 
-
-function handler12() {
-		var ser=document.getElementById("searchmic").value;
-	if ( ser == "" ) {
-		alert('Type something!');
-		
-	}
-	else {
-	
-var search1="https://scholar.google.com/scholar?q=" + document.getElementById("searchmic").value;
-window.open(search1, '_blank');
- }
-}
 
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById("quickscih1").addEventListener("click", handler13);
@@ -185,10 +187,14 @@ document.getElementById("exist1").style.display="none";
 document.getElementById("stored1").style.display="none";
 document.getElementById("quicksci").style.display="block";
 document.getElementById("quickscihub").style.display="none";
-document.getElementById("opensci").style.backgroundColor="#0d1117";
-document.getElementById("openexist").style.backgroundColor="#0d1117";
-document.getElementById("openstored").style.backgroundColor="#0d1117";
-document.getElementById("openquick").style.backgroundColor="#0d3457";
+document.getElementById("opensci").style.backgroundColor="#059862";
+document.getElementById("openquick").style.backgroundColor="#e2fffd";
+document.getElementById("openexist").style.backgroundColor="#059862";
+document.getElementById("openstored").style.backgroundColor="#059862";
+document.getElementById("opensci").style.color="white";
+document.getElementById("openquick").style.color="#059862";
+document.getElementById("openexist").style.color="white";
+document.getElementById("openstored").style.color="white";
  var input = document.getElementById("searchmic").focus();
 }
 document.addEventListener('DOMContentLoaded', function() {
@@ -201,10 +207,14 @@ document.getElementById("exist1").style.display="none";
 document.getElementById("stored1").style.display="none";
 document.getElementById("quicksci").style.display="none";
 document.getElementById("quickscihub").style.display="block";
-document.getElementById("opensci").style.backgroundColor="#0d3457";
-document.getElementById("openexist").style.backgroundColor="#0d1117";
-document.getElementById("openstored").style.backgroundColor="#0d1117";
-document.getElementById("openquick").style.backgroundColor="#0d1117";
+document.getElementById("opensci").style.backgroundColor="#e2fffd";
+document.getElementById("openquick").style.backgroundColor="#059862";
+document.getElementById("openexist").style.backgroundColor="#059862";
+document.getElementById("openstored").style.backgroundColor="#059862";
+document.getElementById("opensci").style.color="#059862";
+document.getElementById("openquick").style.color="white";
+document.getElementById("openexist").style.color="white";
+document.getElementById("openstored").style.color="white";
  var input = document.getElementById("searchsci").focus();
 }
 
@@ -226,7 +236,19 @@ function handler323() {
     document.getElementById("countlist").innerHTML = "You don't have any stored links";
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+  const selectElement = document.getElementById('listo1');
 
+  chrome.storage.sync.get('selectedOption', function (data) {
+    if (data.selectedOption) {
+      selectElement.value = data.selectedOption;
+    }
+  });
+  selectElement.addEventListener('change', function () {
+    const selectedOption = selectElement.value;
+    chrome.storage.sync.set({ selectedOption: selectedOption });
+  });
+});
 
 
 
