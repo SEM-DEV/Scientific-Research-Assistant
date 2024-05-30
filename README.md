@@ -18,4 +18,5 @@ The extension includes:
 ![Gif](https://raw.githubusercontent.com/SEM-DEV/Scientific-Research-Assistant/main/Assets/2.gif)
 ![Gif](https://raw.githubusercontent.com/SEM-DEV/Scientific-Research-Assistant/main/Assets/3.gif)
 ![Gif](https://raw.githubusercontent.com/SEM-DEV/Scientific-Research-Assistant/main/Assets/4.gif)
+![Gif](https://raw.githubusercontent.com/SEM-DEV/Scientific-Research-Assistant/main/Assets/5.gif)
 
