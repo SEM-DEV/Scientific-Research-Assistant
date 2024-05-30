@@ -136,7 +136,7 @@ chrome.contextMenus.create({
 });
 
 chrome.contextMenus.create({
-    title: "Canadian Science publishing ",
+    title: "Canadian Science publishing",
     contexts:["selection"],
     parentId: "acapub",
     id: "pub8",
@@ -144,7 +144,7 @@ chrome.contextMenus.create({
 });
 
 chrome.contextMenus.create({
-    title: "Egruyter",
+    title: "De Gruyter",
     contexts:["selection"],
     parentId: "acapub",
     id: "pub9",
@@ -160,7 +160,7 @@ chrome.contextMenus.create({
 });
 
 chrome.contextMenus.create({
-    title: "ICE Library",
+    title: "ICE online Library",
     contexts:["selection"],
     parentId: "acapub",
     id: "pub11",
@@ -240,7 +240,7 @@ chrome.contextMenus.create({
 });
 
 chrome.contextMenus.create({
-    title: "Wiley",
+    title: "Online Wiley",
     contexts:["selection"],
     parentId: "acapub",
     id: "pub21",
@@ -360,8 +360,6 @@ function acasearch234(info, tab) {
     chrome.tabs.query({ active: true, lastFocusedWindow: true }, (tabs) => {
         let url12 = tabs[0].url;
         let dech = info.selectionText;
-        console.log("Selected text:", dech);
-        console.log("URL:", url12);
         chrome.storage.local.set({ "dfh41232": dech, "dfh4123454": url12 }, () => {      
             chrome.storage.local.get(["dfh4"], (result) => {
                 let dech23 = result.dfh4 || ""; 
@@ -585,7 +583,7 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
     }
 });
 function pub11(info,tab) {   
-    const url22 = "https://www.ice.org.uk/site-search?q=" + info.selectionText;
+    const url22 = "https://www.icevirtuallibrary.com/action/doSearch?AllField=" + info.selectionText;
     chrome.tabs.create({ url: url22, 'index': tab.index+1 });
 }
 chrome.contextMenus.onClicked.addListener((info, tab) => {
@@ -765,6 +763,6 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
     }
 });
 function pdf2(info,tab) {   
-    const url22 = "https://b-ok.org/s/" + info.selectionText;
+    const url22 = "https://z-lib.id/s?q=" + info.selectionText;
     chrome.tabs.create({ url: url22, 'index': tab.index+1 });
 }
