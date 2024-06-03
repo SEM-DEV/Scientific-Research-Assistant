@@ -762,7 +762,18 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
         pdf2(info, tab);
     }
 });
-function pdf2(info,tab) {   
-    const url22 = "https://z-lib.id/s?q=" + info.selectionText;
-    chrome.tabs.create({ url: url22, 'index': tab.index+1 });
-}
+chrome.runtime.onInstalled.addListener((details) => {
+    if (details.reason === chrome.runtime.OnInstalledReason.INSTALL) {
+        chrome.storage.local.set({ tutorialShown: true }, () => {
+            chrome.tabs.create({ url: "tutorial.html" });
+        });
+    }
+});
+
+chrome.runtime.onStartup.addListener(() => {
+    chrome.storage.local.get("tutorialShown", (result) => {
+        if (!result.tutorialShown) {
+            chrome.tabs.create({ url: "tutorial.html" });
+        }
+    });
+});
