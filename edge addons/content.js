@@ -1,71 +1,99 @@
 
 const container = document.createElement('div');
-container.style.position = 'fixed';
-container.style.bottom = '25px';
-container.style.right = '10px';
-container.style.zIndex = '1000';
-container.style.textAlign = 'center';
-container.style.backgroundColor = 'white';
-container.style.borderRadius = '5px';
-container.style.padding = '10px';
-container.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
-container.style.zIndex = '10000000';
+container.id = 'sra-container';
+document.body.appendChild(container);
+
+
+const shadow = container.attachShadow({ mode: 'open' });
+
+const style = document.createElement('style');
+style.textContent = `
+    #sra-main-container {
+        position: fixed;
+        bottom: 25px;
+        right: 10px;
+        z-index: 10000000;
+        text-align: center;
+        background-color: white;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        font-family: Arial, sans-serif;
+        box-sizing: border-box;
+        width: 320px;
+    }
+
+    #sra-title {
+        background-color: white;
+        color: black;
+        padding: 5px 10px;
+        border-radius: 5px 5px 0 0;
+        font-size: 17px;
+        margin-bottom: 10px;
+        text-align: center;
+        line-height: 1.2;
+        font-weight: bold;
+    }
+
+    #sra-close-button {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background-color: white;
+        color: #059862;
+        border: none;
+        font-weight: bold;
+        font-size: 18px;
+        cursor: pointer;
+        line-height: 1.2;
+    }
+
+    #sra-text-button {
+        background-color: #059862;
+        color: white;
+        padding: 5px 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        white-space: normal;
+        font-size: 14px;
+        text-align: center;
+        line-height: 1.2;
+        display: inline-block;
+        margin: 0;
+        box-sizing: border-box;
+    }
+	#sra-text-button:hover {
+        background-color:  #e2fffd;
+        color: #059862;
+`;
+shadow.appendChild(style);
+
+
+const mainContainer = document.createElement('div');
+mainContainer.id = 'sra-main-container';
+
 
 const title = document.createElement('div');
+title.id = 'sra-title';
 title.innerText = 'Scientific Research Assistant';
-title.style.backgroundColor = 'white';
-title.style.color = 'black';
-title.style.padding = '5px 10px';
-title.style.borderRadius = '5px 5px 0 0';
-title.style.fontSize = '17px';
-title.style.marginBottom = '10px';
-title.style.textAlign = 'center';
-title.style.fontFamily = 'Arial, sans-serif';
-title.style.fontSize = '17px';
-title.style.lineHeight = '1.2';
-title.style.fontWeight = 'bold';
 
 
 const closeButton = document.createElement('button');
+closeButton.id = 'sra-close-button';
 closeButton.innerText = '✕';
-closeButton.style.position = 'absolute';
-closeButton.style.top = '10px';
-closeButton.style.right = '8px';
-closeButton.style.backgroundColor = 'white';
-closeButton.style.color = '#059862';
-closeButton.style.border = 'none';
-closeButton.style.fontWeight = 'bold';
-closeButton.style.fontSize = '18px';
-closeButton.style.cursor = 'pointer';
-closeButton.style.fontFamily = 'Arial, sans-serif';
-closeButton.style.lineHeight = '1.2';
-closeButton.style.fontWeight = 'bold';
 
 
 const textButton = document.createElement('button');
+textButton.id = 'sra-text-button';
 textButton.innerHTML = 'Click here to request this paper or book from us<br>If you cannot find it on sci-hub';
-textButton.style.backgroundColor = '#059862';
-textButton.style.color = 'white';
-textButton.style.padding = '5px 5px';
-textButton.style.border = 'none';
-textButton.style.borderRadius = '5px';
-textButton.style.cursor = 'pointer';
-textButton.style.width = '100%';
-textButton.style.whiteSpace = 'normal';
-textButton.style.fontSize = '14px';
-textButton.style.textAlign = 'center';
-textButton.style.zIndex = '1000';
-textButton.style.fontFamily = 'Arial, sans-serif';
-textButton.style.lineHeight = '1.2';
-textButton.style.fontWeight = 'normal';
-textButton.style.display = 'inline-block';
-textButton.style.margin = '0';
-textButton.style.boxSizing = 'border-box';
 
-container.appendChild(closeButton);
-container.appendChild(title);
-container.appendChild(textButton);
-document.body.appendChild(container);
+
+mainContainer.appendChild(closeButton);
+mainContainer.appendChild(title);
+mainContainer.appendChild(textButton);
+shadow.appendChild(mainContainer);
 
 
 textButton.addEventListener('click', () => {
@@ -74,5 +102,5 @@ textButton.addEventListener('click', () => {
 
 
 closeButton.addEventListener('click', () => {
-    container.style.display = 'none';
+    mainContainer.style.display = 'none';
 });
