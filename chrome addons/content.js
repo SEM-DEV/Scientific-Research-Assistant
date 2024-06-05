@@ -67,6 +67,7 @@ style.textContent = `
 	#sra-text-button:hover {
         background-color:  #e2fffd;
         color: #059862;
+	}
 `;
 shadow.appendChild(style);
 
