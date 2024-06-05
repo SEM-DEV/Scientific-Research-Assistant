@@ -5,12 +5,11 @@ document.body.appendChild(container);
 
 
 const shadow = container.attachShadow({ mode: 'open' });
-
 const style = document.createElement('style');
 style.textContent = `
     #sra-main-container {
         position: fixed;
-        bottom: 25px;
+        bottom: 20px;
         right: 10px;
         z-index: 10000000;
         text-align: center;
@@ -20,16 +19,17 @@ style.textContent = `
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         font-family: Arial, sans-serif;
         box-sizing: border-box;
-        width: 320px;
+        width: 270px;
+		color: white;
+        background-color: #059862;
     }
 
     #sra-title {
-        background-color: white;
-        color: black;
-        padding: 5px 10px;
+        color: white;
+        padding: 5px 5px;
         border-radius: 5px 5px 0 0;
         font-size: 17px;
-        margin-bottom: 10px;
+        margin-bottom: 1px;
         text-align: center;
         line-height: 1.2;
         font-weight: bold;
@@ -46,6 +46,7 @@ style.textContent = `
         font-size: 18px;
         cursor: pointer;
         line-height: 1.2;
+		display: none;
     }
 
     #sra-text-button {
@@ -63,10 +64,12 @@ style.textContent = `
         display: inline-block;
         margin: 0;
         box-sizing: border-box;
+		display: none;
     }
 	#sra-text-button:hover {
         background-color:  #e2fffd;
         color: #059862;
+	}
 `;
 shadow.appendChild(style);
 
@@ -103,4 +106,11 @@ textButton.addEventListener('click', () => {
 
 closeButton.addEventListener('click', () => {
     mainContainer.style.display = 'none';
+});
+container.addEventListener('mouseenter', () => {
+    closeButton.style.display = 'block';
+	textButton.style.display = 'block';
+	mainContainer.style.backgroundColor= 'white';
+	mainContainer.style.width= '350px';
+	title.style.color= 'black';
 });
