@@ -1,98 +1,188 @@
-let slideIndex = 1;
-showSlides(slideIndex);
+<!DOCTYPE html>
+<html>
+<head>
+<title>Scientific Research Assistant</title>
+<link rel="icon" type="image/x-icon" href="icon_16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+/* Slideshow container */
+.slideshow-container {
+  max-width: 860px;
+  position: relative;
+  margin: auto;
 }
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(0,0,0,0.07);
 }
 
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
 }
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById("prev").addEventListener("click", prev);
-});
-function prev() {
-plusSlides(-1);
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
 }
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById("next").addEventListener("click", next);
-});
-function next() {
-plusSlides(1);
+
+/* Caption text */
+.text {
+  color: white;
+  background-color: red;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
 }
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById("currentSlide1").addEventListener("click", currentSlide1);
-});
-function currentSlide1() {
-currentSlide(1);
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: white;
+  background-color: red;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
 }
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById("currentSlide2").addEventListener("click", currentSlide2);
-});
-function currentSlide2() {
-currentSlide(2);
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
 }
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById("currentSlide3").addEventListener("click", currentSlide3);
-});
-function currentSlide3() {
-currentSlide(3);
+
+.active, .dot:hover {
+  background-color: #717171;
 }
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById("currentSlide4").addEventListener("click", currentSlide4);
-});
-function currentSlide4() {
-currentSlide(4);
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
 }
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById("currentSlide5").addEventListener("click", currentSlide5);
-});
-function currentSlide5() {
-currentSlide(5);
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
 }
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById("currentSlide6").addEventListener("click", currentSlide6);
-});
-function currentSlide6() {
-currentSlide(6);
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
 }
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById("currentSlide7").addEventListener("click", currentSlide7);
-});
-function currentSlide7() {
-currentSlide(7);
+.titletext{
+color: #e2fffd;
+text-align: center;
 }
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById("currentSlide8").addEventListener("click", currentSlide8);
-});
-function currentSlide8() {
-currentSlide(8);
+.body{
+background-color: #059862;
+
 }
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById("currentSlide9").addEventListener("click", currentSlide9);
-});
-function currentSlide9() {
-currentSlide(9);
-}
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById("currentSlide10").addEventListener("click", currentSlide10);
-});
-function currentSlide10() {
-currentSlide(10);
-}
+</style>
+</head>
+<body class="body">
+<h2 class="titletext">How to use the extension</h2>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 10</div>
+  <img src="1.jpg" style="width:100%">
+  <div class="text">Press Alt and A. then, you can seearch for any website. The website will be opened in the next new tab.</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">2 / 10</div>
+  <img src="2.jpg" style="width:100%">
+  <div class="text">If you want to save a link, you can select any text in the current page and click on "Add the title and the current link"</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">3 / 10</div>
+  <img src="3.jpg" style="width:100%">
+  <div class="text">You can see all the saved link by clicking on "My stored links". You can open a specific link by clicking on it.</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">4 / 10</div>
+  <img src="4.jpg" style="width:100%">
+  <div class="text">You can search for a specific text by entering it in the text field and chose your default website.</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">5 / 10</div>
+  <img src="5.jpg" style="width:100%">
+  <div class="text">You can search for a specific text by entering it in the text field and chose your default website.</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">6 / 10</div>
+  <img src="6.jpg" style="width:100%">
+  <div class="text">Paste any paper's or book's link or DOI and click on "Open link in SCI-HUB" to download it from SCI-HUB.</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">7 / 10</div>
+  <img src="7.jpg" style="width:100%">
+  <div class="text">You can can open SCI-HUB by clicking right and then "Download from Science Hub".</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">8 / 10</div>
+  <img src="8.jpg" style="width:100%">
+  <div class="text">Some papers are not availlable on SCI-HUB. Fellow the next slide to see how you can request it from us.</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">9 / 10</div>
+  <img src="9.jpg" style="width:100%">
+  <div class="text">You can see on the right botton a button "Click here to request". Click on it to open the link where you can reuquest papers or books.</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">10 / 10</div>
+  <img src="10.jpg" style="width:100%">
+  <div class="text">You must click on "Proceed and put your email and the link of the paper. In the worst case, you can get a response within two days.</div>
+</div>
+
+<a class="prev" id="prev" >&lsaquo;</a>
+<a class="next" id="next" >&rsaquo;</a>
+
+</div>
+<br>
+<div style="text-align:center">
+  <span class="dot" id="currentSlide1"></span> 
+  <span class="dot" id="currentSlide2"></span> 
+  <span class="dot" id="currentSlide3"></span>
+  <span class="dot" id="currentSlide4"></span> 
+  <span class="dot" id="currentSlide5"></span>
+  <span class="dot" id="currentSlide6"></span>
+  <span class="dot" id="currentSlide7"></span>
+  <span class="dot" id="currentSlide8"></span>
+  <span class="dot" id="currentSlide9"></span>
+  <span class="dot" id="currentSlide10"></span>  
+</div>
+
+<script src="tutorial.js"></script>
+</body>
+</html> 
