@@ -14,7 +14,7 @@ style.textContent = `
         right: 10px;
         z-index: 10000000;
         text-align: center;
-        background-color: white;
+        background-color: #112743;
         border-radius: 5px;
         padding: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -24,8 +24,8 @@ style.textContent = `
     }
 
     #sra-title {
-        background-color: white;
-        color: black;
+        background-color: #112743;
+        color: white;
         padding: 5px 5px;
         border-radius: 5px 5px 0 0;
         font-size: 17px;
@@ -39,7 +39,7 @@ style.textContent = `
         position: absolute;
         top: 5px;
         right: 5px;
-        background-color: white;
+        background-color: #112743;
         color: #059862;
         border: none;
         font-weight: bold;
@@ -47,7 +47,9 @@ style.textContent = `
         cursor: pointer;
         line-height: 1.2;
     }
-
+    #sra-close-button:hover {
+        color: #9ee14b;
+	}
     #sra-text-button {
         background-color: #059862;
         color: white;
@@ -65,8 +67,8 @@ style.textContent = `
         box-sizing: border-box;
     }
 	#sra-text-button:hover {
-        background-color:  #e2fffd;
-        color: #059862;
+		background-color: #059862;
+        color: #9ee14b;
 	}
 `;
 shadow.appendChild(style);
@@ -88,7 +90,7 @@ closeButton.innerText = '✕';
 
 const textButton = document.createElement('button');
 textButton.id = 'sra-text-button';
-textButton.innerHTML = 'Click here to request this paper or book from us<br>If you cannot find it on sci-hub';
+textButton.innerHTML = 'Click here to request this paper or book from us<br>If you cannot find it on sci-hub or not open access';
 
 
 mainContainer.appendChild(closeButton);
