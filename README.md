@@ -8,9 +8,9 @@ The extension includes:
 * This extension works cross-platform (Mozilla, Chrome, and Edge).
 
 
-[Get it from Chrome](https://chrome.google.com/webstore/detail/scientific-research-websi/jooegpcnchemlkionfejkjijhjenmdag?hl=ar)
+[Get it from Chrome](https://www.go.sem-dev.net/srachrome)
 
-[Get it from Edge](https://microsoftedge.microsoft.com/addons/detail/scientific-research-websi/popdaphggpbcfbfpgkekpgcnjcohpikb)
+[Get it from Edge](https://www.go.sem-dev.net/sraedge)
 
 ## Demo
 ![Gif](https://raw.githubusercontent.com/SEM-DEV/Scientific-Research-Assistant/main/assets/1.gif)
