@@ -10,7 +10,7 @@ The extension includes:
 
 [Get it from Chrome](https://www.go.sem-dev.net/srachrome)
 
-[Get it from Edge](https://www.go.sem-dev.net/sraedge)
+
 
 ## Demo
 ![Gif](https://raw.githubusercontent.com/SEM-DEV/Scientific-Research-Assistant/main/assets/1.gif)
