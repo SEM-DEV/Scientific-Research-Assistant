@@ -5,17 +5,17 @@ chrome.runtime.onInstalled.addListener(() => {
         id: "acasearch234",
     });
 	chrome.contextMenus.create({
-    title: "Download from Science Hub",
+    title: "Download from Science Hub using DOI link",
     contexts:["link"],
     id: "sciha",
     });
 	chrome.contextMenus.create({
-    title: "Download from Science Hub",
+    title: "Download from Science Hub using DOI text",
     contexts:["selection"],
     id: "sciha1",
     });
 	chrome.contextMenus.create({
-    title: "Download from Science Hub",
+    title: "Download from Science Hub using Link",
     contexts:["all"],
     id: "sciha2",
     });
@@ -381,8 +381,21 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
     }
 });
 function scidown(info,tab) {   
-    const url = "https://sci-hub.ru/" + info.linkUrl;
-    chrome.tabs.create({ url: url, 'index': tab.index+1 });
+   if (info.menuItemId === "sciha") {
+  let url = info.linkUrl;
+  let doi = null;
+  if (url.includes("doi.org/")) {
+    doi = url.split("doi.org/")[1];
+  } else {
+    doi = url;
+  }
+  if (doi) {
+    let sciHubUrl = "https://sci-hub.ru/" + doi;
+    chrome.tabs.create({ url: sciHubUrl, index: tab.index + 1 });
+  } else {
+    console.error("No DOI found in link: ", url);
+  }
+}
 }
 chrome.contextMenus.onClicked.addListener((info, tab) => {
     if (info.menuItemId === "sciha1") {
