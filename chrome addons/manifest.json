@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Scientific Research Assistant",
-    "version": "15",
+    "version": "16",
     "description": "List of websites post for scientific research",
     "action": {
         "default_icon": "icon_16.png",
@@ -46,6 +46,21 @@
 						"https://link.springer.com/book/*",
 						"https://www.tandfonline.com/doi/*",
 						"https://onlinelibrary.wiley.com/doi/*",
+						"https://www.jove.com/*",
+						"https://iopscience.iop.org/article/*",
+						"https://dl.acm.org/doi/*",
+						"https://pubs.acs.org/doi/*",
+						"https://pubs.aip.org/*",
+						"https://journals.sagepub.com/doi/*",
+						"https://cdnsciencepub.com/doi/*",
+						"https://epubs.siam.org/doi/*",
+                        "https://academic.oup.com/*",
+                        "https://www.cambridge.org/core/*",
+						"https://psycnet.apa.org/record/*",
+						"https://journals.asm.org/doi/*",
+						"https://www.scientific.net/*",
+						"https://www.science.org/doi/*",
+						"https://dl.astm.org/*",
 						"https://www.worldscientific.com/*"
 						],
 						
