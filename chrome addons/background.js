@@ -5,19 +5,34 @@ chrome.runtime.onInstalled.addListener(() => {
         id: "acasearch234",
     });
 	chrome.contextMenus.create({
-    title: "Download from Science Hub using DOI link",
+    title: "Download from Science Hub using DOI link .ru",
     contexts:["link"],
     id: "sciha",
     });
 	chrome.contextMenus.create({
-    title: "Download from Science Hub using DOI text",
+    title: "Download from Science Hub using DOI text .ru",
     contexts:["selection"],
     id: "sciha1",
     });
 	chrome.contextMenus.create({
-    title: "Download from Science Hub using Link",
+    title: "Download from Science Hub using Link .ru",
     contexts:["all"],
     id: "sciha2",
+    });
+	chrome.contextMenus.create({
+    title: "Download from Science Hub using DOI link .se",
+    contexts:["link"],
+    id: "sciha3",
+    });
+	chrome.contextMenus.create({
+    title: "Download from Science Hub using DOI text .se",
+    contexts:["selection"],
+    id: "sciha4",
+    });
+	chrome.contextMenus.create({
+    title: "Download from Science Hub using Link .se",
+    contexts:["all"],
+    id: "sciha5",
     });
 	chrome.contextMenus.create({
     title: "Academic Search Engine",
@@ -390,6 +405,28 @@ function scidown(info,tab) {
     doi = url;
   }
   if (doi) {
+    let sciHubUrl = "https://sci-hub.ru/" + doi;
+    chrome.tabs.create({ url: sciHubUrl, index: tab.index + 1 });
+  } else {
+    console.error("No DOI found in link: ", url);
+  }
+}
+}
+chrome.contextMenus.onClicked.addListener((info, tab) => {
+    if (info.menuItemId === "sciha3") {
+        scidown3(info, tab);
+    }
+});
+function scidown3(info,tab) {   
+   if (info.menuItemId === "sciha3") {
+  let url = info.linkUrl;
+  let doi = null;
+  if (url.includes("doi.org/")) {
+    doi = url.split("doi.org/")[1];
+  } else {
+    doi = url;
+  }
+  if (doi) {
     let sciHubUrl = "https://sci-hub.se/" + doi;
     chrome.tabs.create({ url: sciHubUrl, index: tab.index + 1 });
   } else {
@@ -403,6 +440,15 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
     }
 });
 function scidown1(info,tab) {   
+    const url = "https://sci-hub.ru/" + info.selectionText;
+    chrome.tabs.create({ url: url, 'index': tab.index+1 });
+}
+chrome.contextMenus.onClicked.addListener((info, tab) => {
+    if (info.menuItemId === "sciha4") {
+        scidown4(info, tab);
+    }
+});
+function scidown4(info,tab) {   
     const url = "https://sci-hub.se/" + info.selectionText;
     chrome.tabs.create({ url: url, 'index': tab.index+1 });
 }
@@ -414,11 +460,22 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
 function scidown2(info, tab) {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         const currentUrl = tabs[0].url;
+        const newUrl = "https://sci-hub.ru/" + currentUrl;
+        chrome.tabs.create({ url: newUrl, index: tab.index + 1 });
+    });
+}
+chrome.contextMenus.onClicked.addListener((info, tab) => {
+    if (info.menuItemId === "sciha5") {
+        scidown5(info, tab);
+    }
+});
+function scidown5(info, tab) {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        const currentUrl = tabs[0].url;
         const newUrl = "https://sci-hub.se/" + currentUrl;
         chrome.tabs.create({ url: newUrl, index: tab.index + 1 });
     });
 }
-
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
     if (message.action === 'openNewTab') {
         chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
